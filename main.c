@@ -49,6 +49,7 @@ int main(){
 		switch(choice){
 			case 1:
 				printf("there are %d employees in the company\n", num);
+				break;
 			case 2:
 				int m = 0;
 				int f = 0;
