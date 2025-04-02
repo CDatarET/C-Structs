@@ -41,7 +41,7 @@ int main(){
 		printf("What do you want to do? press\n");
 		printf("1 for total employees\n");
 		printf("2 for male and female employees\n");
-		printf("3 for employee with salary more than 10,000\n");
+		printf("3 for employees with salary more than 10,000\n");
 		printf("4 for employee that is \"Asst Manager\"\n");
 		
 		int choice;
@@ -62,6 +62,28 @@ int main(){
 					}
 				}
 				printf("there are %d males and %d females\n", m, f);
+			case 3:
+			int t = 0;
+				for(int i = 0; i < num; i++){
+					if(db[i].salary >= 10000){
+						t++;
+					}
+				}
+				printf("there are %d employees earning more than 10000\n", t);
+				break;
+			case 4:
+				int found = 0;
+				for(int i = 0; i < num; i++){
+					if(strcmp(db[i].des,"Asst Manager") == 0){
+						found++;
+						printf("the employee who is an assistant manager is %s\n", db[i].name);
+						break;
+					}
+					if(!found){
+						printf("no such employee\n");
+					}
+				}
+				break;
 		}
 		printf("another operation? y/n\n");
 		scanf(" %c", &yn);
